@@ -40,6 +40,17 @@ sample_frac(data_file, .01)
 tmp_data <- filter(data_file, age > 85)
 tmp_sel_data <- select(tmp_data, hhid, gender, race)
 
+# Nested functions 
+data_filtered <- select(filter(data_file, age > 85), hhid,gender, race)
+
+# pipes - output from one f > send it to the other 
+data_file %>%
+  filter(age > 85) %>%
+  select(hhid, gender, race)
+# Adding new columns 
+
+data_file %>% 
+  mutate(birth_year = substring(driver_birthdate, 1, 4))
 
 # finding the column number for "shstruc" and "hhid =1"
 
