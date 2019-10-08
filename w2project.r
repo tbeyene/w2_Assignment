@@ -1,8 +1,13 @@
 # Github and R second project 
 # Coding and mapping Assignment 1 
 
-import pandas as pd
+# import pandas as pd
+install.packages("haven")
+# or we can install the developement tools from github
+
+devtools::install_github("tidyverse/haven")
 library(haven)
+library("tidyverse") 
 
 # creating the data frame
 df = read_dta("IAHR52FL.dta")
